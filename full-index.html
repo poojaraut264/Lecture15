@@ -1,0 +1,111 @@
+<!DOCTYPE html />
+<html>
+    <head>
+        <title>Pet Store</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- JS in HTML example-->
+        <script>
+            // Simple JS Example
+            // let dogName = "Stark";
+            // console.log(dogName);
+
+            // WINDOW location example
+            // console.log(window.location);
+            
+            // WINDOW alert example
+            // window.alert("OMG!!! Something is happening!");
+
+            // WINDOW confirm example
+            // let response = window.confirm("Click OK if you are having a great time.");
+            // console.log("The response was: " + response);
+
+            // DOM title example
+            // console.log(document.title);
+
+            function adoptArnold() {
+                let element = document.getElementById("arnold-text");
+                element.setAttribute("style", "background-color: red;");
+                element.innerText = "Arnold (ADOPTED!)";
+            }
+
+            function adoptLucy() {
+                let element = document.getElementById("lucy-text");
+                element.setAttribute("style", "background-color: red;");
+                element.innerText = "Lucy (ADOPTED!)";
+            }
+
+            function handleOnMouseOver(id) {
+                let element = document.getElementById(id);
+                element.setAttribute("style", "background-color: blue;");
+            }
+
+            function handleOnMouseOut(id) {
+                let element = document.getElementById(id);
+                element.setAttribute("style", "background-color: none;");
+            }
+        </script>
+
+        <!-- Including JS file in HTML -->
+        <script src="simple-js.js"></script>
+    </head>
+    <body>
+        <h1>Welcome To Our Pet Store</h1>
+        <p id="welcome-message">Have a look around!</p>
+        <section>
+            <img src="dog.jpeg" style="max-width: 300px;"/>
+            <p id="arnold-text">Arnold</p>
+            <button
+                id="arnold-button"
+                class="pet-adopt-button"
+                onmouseover="handleOnMouseOver('arnold-button');"
+                onmouseout="handleOnMouseOut('arnold-button');"
+            >Adopt Me!</button>
+
+            <!-- Event Listener Example -->
+            <script>
+                let petBtnElementForListener = document.getElementById("arnold-button");
+                petBtnElementForListener.addEventListener('click', adoptArnold);
+            </script>
+
+            <!-- DOM getElementById example -->
+            <script>
+                let btnElement = document.getElementById("arnold-button");
+                console.log(btnElement);
+            </script>
+
+            <!-- DOM querySelector example -->
+            <script>
+                let petBtnElement = document.querySelector(".pet-adopt-button");
+                console.log(btnElement);
+            </script>
+
+            
+
+
+        </section>
+        <br />
+        <section>
+            <img src="cat.png" style="max-width: 300px;"/>
+            <p id="lucy-text">Lucy</p>
+            <button
+                id="lucy-button"
+                class="pet-adopt-button"
+                onclick="adoptLucy()"
+                onmouseover="handleOnMouseOver('lucy-button');"
+                onmouseout="handleOnMouseOut('lucy-button');"
+            >Adopt Me!</button>
+        </section>
+
+
+        <!-- DOM querySelectorAll example -->
+        <!-- NOTE: Rememeber this is placed down here be cause it is 
+        beneath all of the buttons -->
+        <script>
+            let petBtnElementList = document.querySelectorAll(".pet-adopt-button");
+            for (let i=0; i < petBtnElementList.length; i++) {
+                petBtnElementList[i].innerHTML += " Please!"
+            }
+        </script>
+
+    </body>
+</html>

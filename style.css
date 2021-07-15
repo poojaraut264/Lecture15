@@ -1,0 +1,14 @@
+h1 {
+    color: green;
+}
+
+.pet-adopt-button {
+    font-size: 16px;
+    color: red;
+}
+
+#welcome-message {
+    font-size: 18px;
+    color: orange;
+    font-weight: bold;
+}
